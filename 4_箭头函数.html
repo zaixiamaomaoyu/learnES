@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // const fn = () => {
+    //   console.log(12);
+    // }
+    // fn()
+
+    // 简写
+    const sum = (n1,n2) =>  n1 + n2
+    console.log(sum(1,2));
+
+    const str = s => alert(s)
+    // str('你好')
+
+    // this指向
+    const obj = {name:'zwn'}
+    function fn(){
+      console.log(this);
+      return () => {
+        console.log(this);
+      }
+    }
+    fn()
+    const resFn = fn.call(obj)
+    resFn()
+
+    var age = 100
+    var obj1 = {
+      age:22,
+      say:()=>{
+        console.log(this.age);
+      }
+      // say:function(){
+      //   console.log(this.age);
+      // }
+    }
+    obj1.say()
+
+    function fn1(){
+      console.log(arguments);
+    }
+    fn1(1,2,3)
+  </script>
+</body>
+</html>
